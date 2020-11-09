@@ -21,10 +21,16 @@ html {
   cursor: pointer;
 }
 // web version
+.aside {  
+  background-color: rgba(0, 0, 0, 0.5);
+}
 
 .App {
   display: flex;
   flex-direction: row;
+  
+  background-color: rgba(0, 0, 0, 0.294);
+
   // width: 100%;
   // height: 100%;
   }
@@ -41,6 +47,7 @@ html {
     nav {
       height: 10%;
       padding-top: 20px;
+      background-color: rgba(0, 0, 0, 0.5);
       .content-type {
         display: flex;
         flex-direction: row;
@@ -52,7 +59,7 @@ html {
       height: 30%;
     }
     .main {
-      height: 65%;
+      height: 90%;
       border: 1px solid black;
       overflow: scroll;
       padding: 15px;

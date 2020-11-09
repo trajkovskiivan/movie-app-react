@@ -5,7 +5,7 @@ class Aside extends Component {
     state = {}
     render() {
         return (
-            <aside>
+            <aside className="aside">
                 <div className="genres">
                     <p className="select-btn">Action</p>
                     <p className="select-btn">Drama</p>

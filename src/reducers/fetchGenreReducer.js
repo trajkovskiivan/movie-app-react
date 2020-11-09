@@ -1,6 +1,6 @@
 export default (state = null, action) => {
     switch (action.type) {
-        case 'FETCH_GENRE':
+        case 'FETCH_GENRES':
             return action.payload;
         default:
             return state

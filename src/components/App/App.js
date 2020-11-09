@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './App.scss';
 
-import {fetchPopulardata} from '../../actions'
+import {fetchPopulardata, fetchMovieGenres} from '../../actions'
 
 import Nav from '../Nav/Nav';
 import Aside from '../Aside/Aside';
@@ -13,32 +13,26 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      data: null
+      data: null,
+      genres: null
     }
   }
   componentDidMount() {
-    if (!this.props.data) {
-      this.props.fetchPopulardata()
-    } else {
-      this.setState({data: this.props.data})
-    }
-    // console.log(this.props)
+    this.props.fetchPopulardata();
+    this.props.fetchMovieGenres();
+
   }
-  componentWillReceiveProps(nextProps) {
-    if (JSON.stringify(nextProps.data) != JSON.stringify(this.props.data)) {
-      this.setState({data: nextProps.data});
-    }
-  }
+
   render() {
-    // console.log(this.props.data)
+    // console.log(this.props)
     // console.log(this.state)
     return (
       <div className="App">
         <Aside />
         <div className="wrapper">
           <Nav />
-          <Slider />
-          <Main data={this.state.data} />
+          {/* <Slider {...this.props} /> */}
+          <Main {...this.props} />
         </div>
       </div>
     );
@@ -48,8 +42,10 @@ class App extends Component {
 const mapStateToProps = (state) => {
   // console.log(state)
   return {
-    data: state.popularMovieData
+    data: state.popularMovieData,
+    genres: state.genreData
+
   }
 }
 
-export default connect(mapStateToProps, {fetchPopulardata})(App);
+export default connect(mapStateToProps, {fetchPopulardata, fetchMovieGenres})(App);

@@ -1,6 +1,6 @@
 const actions = {
     FETCH_DATA: "FETCH_DATA",
-    FETCH_MOVIES: "FETCH_GENRE"
+    FETCH_GENRES: 'FETCH_GENRES'
 }
 
 export default actions;

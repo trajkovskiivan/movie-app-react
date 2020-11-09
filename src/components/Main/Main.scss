@@ -9,6 +9,10 @@
         width: 200px;
         height: 300px;
         text-align: center;
+        overflow: scroll;
+        &::-webkit-scrollbar {
+            display: none;
+        }
 
         .movie-poster {
             // width: 0.9rem;
@@ -27,6 +31,18 @@
             width: 160px; 
             height: 2em; 
             white-space: nowrap;
+        }
+        .genresUl {
+            
+            margin: 0 8%;
+            padding: 0;
+            text-align: justify;
+            li {
+                display: inline-block;
+                // text-decoration: ;
+                margin-left: 10%;
+                // padding-left: 10%;
+            }
         }
     }
 }
