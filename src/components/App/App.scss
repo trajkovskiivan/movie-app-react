@@ -1,0 +1,147 @@
+body{
+  font-family: 'Nunito Semibold';
+  width: 100vw;
+  height: 100vh;
+  background: rgb(0,0,0);
+  background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(31,31,31,1) 35%, rgba(55,55,55,1) 100%);
+  margin: 0;
+}
+html {
+  margin: 0;
+  padding: 0;
+}
+
+.App > * {
+  background-color: transparent;
+  color: whitesmoke;
+}
+
+
+.select-btn {
+  cursor: pointer;
+}
+// web version
+
+.App {
+  display: flex;
+  flex-direction: row;
+  // width: 100%;
+  // height: 100%;
+  }
+  aside {
+    width: 20%;
+    padding: 10px;
+  }
+  .wrapper {
+    width: 80%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    nav {
+      height: 10%;
+      padding-top: 20px;
+      .content-type {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+
+      }
+    }
+    .slider {
+      height: 30%;
+    }
+    .main {
+      height: 65%;
+      border: 1px solid black;
+      overflow: scroll;
+      padding: 15px;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+    .content {
+      height: 25%;
+    }
+  }
+
+
+
+  // tablet version 
+  @media only screen and (max-width: 850px) {
+    body {
+      background-color: lightblue;
+      width: 100%;
+      .App {
+        display: flex;
+        flex-direction: column;
+        aside {
+          width: 97%;
+          height: 5%;
+          border: 1px solid black;
+          .genres {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            h5 {
+              border: 1px solid black;
+            }
+          }
+        }
+        .wrapper {
+          width: 100%;
+          height: 95%;
+          .slider {
+            height: 15rem;
+            background-color: transparent;
+          }
+          nav {
+            padding: 5px 0;
+          }
+        }
+      }
+    }
+  }
+
+
+ 
+// mobile version
+
+@media only screen and (max-width: 592px) {
+  body {
+    .App {
+      aside {
+        padding: 0;
+        width: 99.7%;
+      }
+      .wrapper {
+        nav {
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+
+
+
+.slider {
+  grid-area: slider;
+}
+main {
+  grid-area: main;
+}
+.content {
+  grid-area: content;
+}
+aside {
+  grid-area: aside;
+}
+nav {
+  grid-area: nav;
+}
+footer {
+  grid-area: footer;
+}
+
